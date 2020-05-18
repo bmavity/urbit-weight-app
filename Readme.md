@@ -14,7 +14,7 @@ After the user has successfully connected to an Urbit, the app will then query t
 
 #### Notes
 - Due to an issue with the Android Server Sent Events library, I was unable to use `channel.js` to connect an `EventSource` to the Urbit. (The library uses a `GET` request to initiate the `EventSource` and Urbit requires a `PUT`)
-- I also could not figure out how to set the state during an http request
+- I also could not figure out how to set the state during an http request, so the mobile app is readonly for now.
 
 
 ## Setup
@@ -36,13 +36,13 @@ module.exports = {
 After completing the setup, you're ready to install the Urbit `weight-app` agent. You can do so using the following steps
 - Run `npm run sync` from the root of the repository
 - In the Urbit dojo run
-    - `> |commit %home`
-    - `> |start %weight-app`
+    - `|commit %home`
+    - `|start %weight-app`
 
 Once installed, you can add some weights to the agent using the following command in the Urbit dojo
-`> :weight-app &weight-app-action [%add-weight 180]`
+`:weight-app &weight-app-action [%add-weight 180]`
 
 ## Mobile App
 There are a few ways to install the mobile app on android
 - Run locally with emulator: `npx tns run android`
-- You can also install the `.apk` located in the [releases]()
+- You can also install the `.apk` located in the [releases](https://github.com/bmavity/urbit-weight-app/releases)
